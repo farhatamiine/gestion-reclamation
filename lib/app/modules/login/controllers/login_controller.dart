@@ -43,7 +43,7 @@ class LoginController extends GetxController {
 
       if (response.data["id_token"] != null) {
         loginStorage.write("id_token", response.data["id_token"]);
-        Get.offAllNamed("/home");
+        Get.offAllNamed("/main");
       }
     } on DioError catch (e) {
       Get.snackbar("Error", e.response?.data["title"],

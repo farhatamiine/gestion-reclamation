@@ -18,7 +18,6 @@ class NetworkHandler {
       headers: {
         "Content-Type": "application/json",
         "Accept": "application/json",
-        "Origin": "https://maroc-reclamation-demo.herokuapp.com",
         "Sec-Fetch-Mode": "cors",
         "Sec-Fetch-Site": "same-origin",
         "Authorization": "Bearer $token",

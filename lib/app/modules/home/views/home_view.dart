@@ -15,7 +15,6 @@ class HomeView extends GetView<HomeController> {
     return SafeArea(
       child: Obx(
         () => Scaffold(
-          backgroundColor: Colors.white,
           body: homeController.isLoading.value
               ? const Center(
                   child: CircularProgressIndicator(
@@ -23,14 +22,13 @@ class HomeView extends GetView<HomeController> {
                   ),
                 )
               : Container(
-                  color: Colors.white24,
                   height: double.infinity,
                   padding: const EdgeInsets.symmetric(
                     vertical: 10.0,
                     horizontal: 9.0,
                   ),
                   child: Column(
-                    mainAxisSize: MainAxisSize.max,
+                    mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -106,7 +104,7 @@ class HomeView extends GetView<HomeController> {
                           ),
                           Container(
                             margin: const EdgeInsets.only(top: 10.0),
-                            height: MediaQuery.of(context).size.height * 0.55,
+                            height: MediaQuery.of(context).size.height * 0.50,
                             child: ListView(
                               children: const [
                                 ReclamationCard(),
@@ -117,7 +115,7 @@ class HomeView extends GetView<HomeController> {
                         ],
                       ),
                       Align(
-                        alignment: Alignment.centerLeft,
+                        alignment: Alignment.bottomCenter,
                         child: TextButton(
                           onPressed: () => Get.bottomSheet(
                             backgroundColor: Colors.transparent,
@@ -179,31 +177,33 @@ class HomeView extends GetView<HomeController> {
                             ),
                             isScrollControlled: true,
                           ),
-                          child: Container(
-                            width: MediaQuery.of(context).size.width - 30,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              color: const Color(0xff000d51),
-                            ),
-                            height: 50,
-                            alignment: Alignment.center,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: const [
-                                Icon(
-                                  FeatherIcons.plusCircle,
-                                  color: Colors.white,
-                                ),
-                                SizedBox(
-                                  width: 8,
-                                ),
-                                Text(
-                                  "Nouvelle Reclamation",
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ],
+                          child: Positioned(
+                            bottom: 20,
+                            child: Container(
+                              width: MediaQuery.of(context).size.width - 30,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: const Color(0xff000d51),
+                              ),
+                              height: 45,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: const [
+                                  Icon(
+                                    FeatherIcons.plusCircle,
+                                    color: Colors.white,
+                                  ),
+                                  SizedBox(
+                                    width: 8,
+                                  ),
+                                  Text(
+                                    "Nouvelle Reclamation",
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ),

@@ -203,7 +203,7 @@ class LoginView extends GetView<LoginController> {
                                 ],
                               ),
                             ),
-                            onTap: () => print("Register")),
+                            onTap: () => Get.toNamed("register")),
                         const SizedBox(
                           height: 15.0,
                         )
